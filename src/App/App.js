@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-        <button className="btn btn-danger">Help Me</button>
-    </div>
-  );
-}
 
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      string: 'Hello Charity',
+    };
+  }
+
+  render() {
+    return (
+    <div className="App">
+      <p>{this.state.string}</p>
+        <button onClick = {() => this.setState({ string: 'Hello Lovely' })} className="btn btn-danger">Change Text</button>
+    </div>
+    );
+  }
+}
 export default App;
